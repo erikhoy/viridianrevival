@@ -10,7 +10,7 @@
                 <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/" class="text-muted">Home</a></li>
-				<li class="breadcrumb-item"><a href="/products/1" class="text-muted">Products</a></li>
+				<li class="breadcrumb-item"><a href="/products/listed_products/1" class="text-muted">Products</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Add</li>
                         </ol>
                 </nav>

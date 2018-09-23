@@ -42,7 +42,7 @@
 							<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/products/1">Products</a>
+							<a class="nav-link" href="/products/listed_products/1">Products</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/contact">Contact</a>
@@ -50,7 +50,7 @@
 						<!-- Authentication Links -->
                         			@guest
 							<li class="nav-item">
-								<a class="nav-link" href="admin">Admin</a>
+								<a class="nav-link" href="/admin">Admin</a>
 							</li>
 						@else
 							<li class="nav-item">

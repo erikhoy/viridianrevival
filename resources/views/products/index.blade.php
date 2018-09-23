@@ -20,17 +20,17 @@
 		<ul class="pagination float-right text-light">
 			@if ($paginate->page_total() > 1)
 				@if ($paginate->has_previous())
-					<li class='previous btn btn-secondary'><a href="{{ URL::to('/products/'.$paginate->previous()) }}" class="text-light">Previous</a></li>
+					<li class='previous btn btn-secondary'><a href="{{ URL::to('/products/listed_products/'.$paginate->previous()) }}" class="text-light">Previous</a></li>
 				@endif
 				@for ($i=1;$i<=$paginate->page_total();$i++)
 					@if ($i == $page)
-						<li class='active btn btn-secondary ml-1'><a href="{{ URL::to('/products/'.$i) }}" class="text-light">{{ $i }}</a></li>
+						<li class='active btn btn-secondary ml-1'><a href="{{ URL::to('/products/listed_products/'.$i) }}" class="text-light">{{ $i }}</a></li>
 					@else
-						<li class="btn btn-secondary ml-1"><a href="{{ URL::to('/products/'.$i) }}" class="text-light">{{ $i }}</a></li>
+						<li class="btn btn-secondary ml-1"><a href="{{ URL::to('/products/listed_products/'.$i) }}" class="text-light">{{ $i }}</a></li>
 					@endif
 				@endfor    
 				@if ($paginate->has_next())
-					<li class='next btn btn-secondary ml-1'><a href="{{ URL::to('/products/'.$paginate->next()) }}" class="text-light">Next</a></li>
+					<li class='next btn btn-secondary ml-1'><a href="{{ URL::to('/products/listed_products/'.$paginate->next()) }}" class="text-light">Next</a></li>
 				@endif
 			@endif
 		</ul>
@@ -65,18 +65,18 @@
 		<ul class="pagination float-right">
 			@if ($paginate->page_total() > 1)
 				@if ($paginate->has_previous())
-					<li class='previous btn btn-secondary ml-1'><a href="{{ URL::to('/products/'.$paginate->previous()) }}" class="text-light">Previous</a></li>
+					<li class='previous btn btn-secondary ml-1'><a href="{{ URL::to('/products/listed_products/'.$paginate->previous()) }}" class="text-light">Previous</a></li>
 				@endif
 				@for ($i=1;$i<=$paginate->page_total();$i++)
-					@if ($i == $page)
-						<li class='active btn btn-secondary ml-1'><a href="{{ URL::to('/products/'.$i) }}" class="text-light">{{ $i }}</a></li>
-					@else
-						<li class="btn btn-secondary ml-1"><a href="{{ URL::to('/products/'.$i) }}" class="text-light">{{ $i }}</a></li>
-					@endif
-				@endfor    
+                                        @if ($i == $page)
+                                                <li class='active btn btn-secondary ml-1'><a href="{{ URL::to('/products/listed_products/'.$i) }}" class="text-light">{{ $i }}</a></li>
+                                        @else
+                                                <li class="btn btn-secondary ml-1"><a href="{{ URL::to('/products/listed_products/'.$i) }}" class="text-light">{{ $i }}</a></li>
+                                        @endif
+				@endfor 
 				@if ($paginate->has_next())
-					<li class='next btn btn-secondary ml-1'><a href="{{ URL::to('/products/'.$paginate->next()) }}" class="text-light">Next</a></li>
-				@endif
+                                        <li class='next btn btn-secondary ml-1'><a href="{{ URL::to('/products/listed_products/'.$paginate->next()) }}" class="text-light">Next</a></li>
+                                @endif	
 			@endif
 		</ul>
         </div>
