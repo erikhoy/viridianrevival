@@ -20,7 +20,7 @@ Route::get('/products/listed_products/{page}', ['uses' => 'ProductsController@in
 
 Route::get('/products/show/{listing_id}', ['uses' => 'ProductsController@show']);
 
-Route::get('/products/add', ['uses' => 'ProductsController@create']);
+Route::get('/products/add', ['uses' => 'ProductsController@create'])->middleware('auth');
 
 Route::post('products/add', ['as'=>'products.store','uses'=>'ProductsController@store']);
 
