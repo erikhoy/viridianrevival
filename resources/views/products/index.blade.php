@@ -1,7 +1,7 @@
-@extends('layouts/app')
+@extends ('layouts/app')
   
 @section ('title')
-        Products:Viridian Revival
+        Products: Viridian Revival
 @endsection
 @php
         $page = !empty($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -35,32 +35,28 @@
 			@endif
 		</ul>
 	</div>
-	<div class="row p-5">
-		@foreach ($products as $product)
-			@php
-				$image = $product['Images'][0]['url_fullxfull'];
-				$title = htmlspecialchars_decode($product['title']);
-				$description = htmlspecialchars_decode($product['description']);
-				$desc = substr($description,0,400);
-				$url = URL::to('/products/show', $product['listing_id']);
-			@endphp
-			<div class="col-6 product">
-				<div class="row">
-					<div class="col-5 px-1 py-4">
-						<img src="{{ $image }}" class="rounded shadow-lg" alt="{{ $product['title'] }}" width="100%">
-					</div>
-					<div class="col-7 px-3 py-4">
-						<p>
-							<a href="{{ URL::to('/products/show', $product['listing_id']) }}" class="text-muted"><strong>{{ $title }}</strong></a>
-						</p>
-						<p class="text-justify">
-							{{ $desc }}...<a href="{{ $url }}" class="text-muted">Read&nbsp;More</a>
-						</p>
-					</div>
+</div>
+<div class="row p-5">
+	@foreach ($products as $product)
+		@php
+			$image = $product['Images'][0]['url_fullxfull'];
+			$title = htmlspecialchars_decode($product['title']);
+			$description = htmlspecialchars_decode($product['description']);
+			$desc = substr($description,0,400);
+			$url = URL::to('/products/show', $product['listing_id']);
+		@endphp
+		<div class="col-6 product">
+			<div class="row">
+				<div class="col-5 px-1 py-4">
+					<img src="{{ $image }}" class="rounded shadow-lg" alt="{{ $product['title'] }}" width="100%">
+				</div>
+				<div class="col-7 px-3 py-4">
+					<p><a href="{{ URL::to('/products/show', $product['listing_id']) }}" class="text-muted"><strong>{{ $title }}</strong></a></p>
+					<p class="text-justify">{{ $desc }}...<a href="{{ $url }}" class="text-muted">Read&nbsp;More</a></p>
 				</div>
 			</div>
-		@endforeach
-	</div>
+		</div>
+	@endforeach
 </div>
 <div class="row">
 	<div class="col col-md-9">

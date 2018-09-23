@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    //
+	//
+	protected $fillable = ['name', 'price', 'source', 'status_id', 'etsy_id'];
+	
 	public static function find_products_with_api($status_id, $page, $items_per_page, $items_total_count) {
                 if(empty($page)) {
                         $offset = 0;

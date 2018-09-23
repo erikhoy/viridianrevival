@@ -16,9 +16,13 @@ Route::get('/', function () {
 	return view('index', compact('products'));
 });
 
-Route::get('/products/{page}', ['uses' => 'ProductsController@index']);
+Route::get('/products/listed_products/{page}', ['uses' => 'ProductsController@index']);
 
 Route::get('/products/show/{listing_id}', ['uses' => 'ProductsController@show']);
+
+Route::get('/products/add', ['uses' => 'ProductsController@create']);
+
+Route::post('products/add', ['as'=>'products.store','uses'=>'ProductsController@store']);
 
 Route::get('/contact', function () {
 	return view('contact/index');

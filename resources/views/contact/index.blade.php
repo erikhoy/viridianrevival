@@ -1,7 +1,7 @@
-@extends('layouts/app')
+@extends ('layouts/app')
   
 @section ('title')
-        Products:Viridian Revival
+        Contact: Viridian Revival
 @endsection
 
 @section ('content')
