@@ -18,6 +18,8 @@ Route::get('/', function () {
 
 Route::get('/products/{page}', ['uses' => 'ProductsController@index']);
 
+Route::get('/products/show/{listing_id}', ['uses' => 'ProductsController@show']);
+
 Route::get('/contact', function () {
 	return view('contact/index');
 });

@@ -21,6 +21,14 @@ class Product extends Model
                 return $etsy_array;
 	}
 
+	public static function find_listing_with_api($listing_id) {
+                $etsy_url       = "https://openapi.etsy.com/v2/listings/".$listing_id."?api_key=1gzqo6wevm3nobomtzt9jh5j&includes=Images";
+                $etsy_json      = file_get_contents($etsy_url);
+                $etsy_array     = json_decode($etsy_json, true);
+
+                return $etsy_array;
+	}
+
 	public static function count_products_with_api() {
                 $etsy_url = "https://openapi.etsy.com/v2/shops/viridianrevival/listings/active?api_key=1gzqo6wevm3nobomtzt9jh5j&includes=Images&limit=50";
                 $etsy_json = file_get_contents($etsy_url);

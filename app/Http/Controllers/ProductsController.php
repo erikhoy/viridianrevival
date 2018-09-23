@@ -54,9 +54,13 @@ class ProductsController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($listing_id)
     {
-        //
+	   //
+	$product_array = Product::find_listing_with_api($listing_id);
+	$product = $product_array['results'][0];
+
+        return view('products.show', compact('product'));
     }
 
     /**
