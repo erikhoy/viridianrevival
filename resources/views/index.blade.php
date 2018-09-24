@@ -16,7 +16,7 @@
 	</div>
 	<div class="col-sm-6 col-lg-5">
 		<h2 class="text-center">Recently Added Products</h2>
-		@for ($i=1;$i<=5;$i++)
+		@for ($i=0;$i<=4;$i++)
 			@php
 				$image = $products['results'][$i]['Images'][0]['url_fullxfull'];
 				$title = $products['results'][$i]['title'];
